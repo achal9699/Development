@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <script>
+    function validateForm() {
+      const fName = document.myForm.firstname.value.trim();
+      const lName = document.myForm.lastname.value.trim();
+      const email = document.myForm.email.value.trim();
+      const dob = document.myForm.dob.value.trim();
+      const gender = document.myForm.gender.value;
+
+      if (fName === "") {
+        window.alert("Please enter your first name");
+        return false;
+      }
+
+      if (lName === "") {
+        window.alert("Please enter your last name");
+        return false;
+      }
+
+      if (email === "") {
+        window.alert("Please enter your email");
+        return false;
+      }
+
+      if (dob === "") {
+        window.alert("Please enter your date of birth");
+        return false;
+      }
+
+      if (gender === "") {
+        window.alert("Please select your gender");
+        return false;
+      }
+
+      // If all validations pass
+      
+      return true;
+    }
+  </script>
+</head>
+<body>
+    <h2><b>Registration form</b></h2>
+  <form name="myForm" onsubmit="return validateForm();">
+    First Name:* <input type="text" name="firstname"><br><br>
+    Last Name:* <input type="text" name="lastname"><br><br>
+    Email:* <input type="email" name="email"><br><br>
+    Date of Birth:* <input type="date" name="dob"><br><br>
+    Gender:*
+    <select name="gender">
+      <option value="">Select</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select><br><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
